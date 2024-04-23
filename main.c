@@ -6,7 +6,7 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:39:49 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/22 17:08:41 by htopa            ###   ########.fr       */
+/*   Updated: 2024/04/23 10:55:43 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,11 @@
 
 int	main(void)
 {
-	void	*x;
+	char	x[6];
+	char	y[6];
 
+	bzero(x, sizeof(x));
+	bzero(y, sizeof(y));
 	printf("Testing ft_isalpha.c:\n");
 	printf("%d\n", ft_isalpha('h'));
 	printf("%d\n", ft_isalpha('3'));
@@ -89,11 +92,11 @@ int	main(void)
 	printf("Testing ft_memset.c:\n");
 	ft_memset(x, 'a', 5);
 	printf("%s\n", x);
-	ft_memset(x, 104, 5);
+	ft_memset(y, 104, 5);
+	printf("%s\n", y);
+	memset(x, 'a', 5);
 	printf("%s\n", x);
-	memset(x, 'b', 5);
-	printf("%s\n", x);
-	memset(x, 104, 5);
-	printf("%s\n", x);
+	memset(y, 104, 5);
+	printf("%s\n", y);
 	return (0);
 }
