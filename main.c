@@ -105,5 +105,12 @@ int	main(void)
 	printf("%s\n", x);
 	memset(y, 104, 5);
 	printf("%s\n", y);
+	printf("Testing ft_memchr.c:\n");
+	printf("%s\n", ft_memchr("hello", 'e', 5));
+	printf("%s\n", ft_memchr("hello", '\0', 5));
+	printf("%s\n", ft_memchr("hello", 'a', 5));
+	printf("%s\n", memchr("hello", 'e', 5));
+	printf("%s\n", memchr("hello", '\0', 5));
+	printf("%s\n", memchr("hello", 'a', 5));
 	return (0);
 }
