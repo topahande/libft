@@ -112,5 +112,8 @@ int	main(void)
 	printf("%s\n", memchr("hello", 'e', 5));
 	printf("%s\n", memchr("hello", '\0', 5));
 	printf("%s\n", memchr("hello", 'a', 5));
+	printf("Testing ft_strdup.c:\n");
+	printf("%s\n", ft_strdup("hello"));
+	printf("%s\n", strdup("hello"));
 	return (0);
 }
