@@ -6,7 +6,7 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:36:35 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/23 11:32:45 by htopa            ###   ########.fr       */
+/*   Updated: 2024/04/23 14:20:41 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strdup(const char *s1);
+int		ft_atoi(const char *str);
 
 #endif

@@ -115,5 +115,8 @@ int	main(void)
 	printf("Testing ft_strdup.c:\n");
 	printf("%s\n", ft_strdup("hello"));
 	printf("%s\n", strdup("hello"));
+	printf("Testing ft_atoi.c:\n");
+	printf("%d\n", ft_atoi("  -+--12gb34"));
+	printf("%d\n", atoi("  -+--12gb34"));
 	return (0);
 }
