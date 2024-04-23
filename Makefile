@@ -24,6 +24,7 @@ MY_SOURCES = ft_isalpha.c \
 			ft_strrchr.c \
 			ft_strncmp.c \
 			ft_memset.c \
+			ft_bzero.c \
 			main.c
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
