@@ -30,6 +30,9 @@ MY_SOURCES = ft_isalpha.c \
 			ft_atoi.c \
 			ft_strlcpy.c \
 			ft_strlcat.c \
+			ft_strnstr.c \
+			ft_memcpy.c \
+			ft_memmove.c \
 			main.c
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
