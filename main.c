@@ -197,5 +197,10 @@ int	main(void)
 	char p[] = "123456781234567";
 	printf("%s\n", ft_memmove(p + 2, p, 14));
 	printf("%s\n", memmove(p + 2, p, 14));
+	printf("Testing ft_calloc.c:\n");
+	printf("%s\n", ft_calloc(5, 2));
+	printf("%s\n", calloc(5, 2));
+	printf("%s\n", ft_calloc(0, 2));
+	printf("%s\n", calloc(0, 2));
 	return (0);
 }
