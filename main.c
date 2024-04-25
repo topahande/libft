@@ -6,7 +6,7 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:39:49 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/23 11:36:41 by htopa            ###   ########.fr       */
+/*   Updated: 2024/04/24 12:12:20 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@ int	main(void)
 {
 	char	x[6];
 	char	y[6];
+	char	a[10] = "hello";
+	char	b[10] = "hey";
+	char	c[10] = "hello";
+	char	d[10] = "hey";
+	char	e[10] = "hello";
+	char	f[10] = "hey";
+	char	g[10] = "hello";
+	char	h[10] = "hey";
 
 	printf("Testing ft_isalpha.c:\n");
 	printf("%d\n", ft_isalpha('h'));
@@ -118,5 +126,19 @@ int	main(void)
 	printf("Testing ft_atoi.c:\n");
 	printf("%d\n", ft_atoi("  -+--12gb34"));
 	printf("%d\n", atoi("  -+--12gb34"));
+	printf("Testing ft_strlcpy.c:\n");
+	printf("%zu\n", ft_strlcpy(a, b, 4));
+	printf("%s\n", a);
+	printf("%s\n", b);
+	printf("%zu\n", strlcpy(c, d, 4));
+	printf("%s\n", c);
+	printf("%s\n", d);
+	printf("Testing ft_strlcat.c:\n");
+	printf("%zu\n", ft_strlcat(e, f, 8));
+	printf("%s\n", e);
+	printf("%s\n", f);
+	printf("%zu\n", strlcat(g, h, 8));
+	printf("%s\n", g);
+	printf("%s\n", h);
 	return (0);
 }
