@@ -9,38 +9,45 @@
 /*   Updated: 2024/04/23 13:42:24 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+/* ************************************************************************** */
+/* LIBRARY                                                                    */   
+/*   libft                                                                    */  
+/* DESCRIPTION                                                                */
+/*   The ft_strnstr() function re-implements the original strnstr() function  */
+/*   which is part of the string library. It locates the first occurrence of  */
+/*   the null-terminated string needle in the string haystack, where not more */
+/*   than len characters are searched. Characters that appear after a ‘\0’    */
+/*   character are not searched.                                              */
+/* RETURN VALUES                                                              */
+/*   If needle is an empty string, haystack is returned; if needle occurs     */
+/*   nowhere in haystack, NULL is returned; otherwise a pointer to the first  */
+/*   character of the first occurrence of needle is returned.                 */
+/* ************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	const char	*found;
-	const char	*find;
     size_t  i;
+    size_t  j;
 
     i = 0;
-	if (*needle == '\0')
+	j = 0;
+	if (needle[i] == '\0' || needle == NULL)
 		return ((char *)haystack);
-	find = needle;
-	while (*haystack != '\0' && i < len)
+	while (haystack[i] != '\0' && i < len)
 	{
-		if (*haystack != *find && i < len)
+		if (haystack[i] == needle[j])
 		{
-			haystack++;
-            i++;
-			continue ;
+			while (haystack[i + j] == needle [j] && i + j < len)
+			{
+				if (needle[j + 1] == '\0')
+					return ((char *)(haystack + i));
+				j++;
+			}
+			j = 0;
 		}
-		found = haystack;
-		while (i < len)
-		{
-			if (*find == '\0')
-				return ((char *)haystack);
-			if (*found++ != *find++)
-				break ;
-		}
-		find = needle;
-		haystack++;
-        i++;
+		i++;
 	}
-	return (0);
+	return (NULL);
 }

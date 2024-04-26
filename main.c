@@ -126,6 +126,12 @@ int	main(void)
 	printf("Testing ft_atoi.c:\n");
 	printf("%d\n", ft_atoi("  -+--12gb34"));
 	printf("%d\n", atoi("  -+--12gb34"));
+	printf("%d\n", ft_atoi("  +2147483647"));
+	printf("%d\n", atoi("  +2147483647"));
+	printf("%d\n", ft_atoi("  -2147483648"));
+	printf("%d\n", atoi("  -2147483648"));
+	printf("%d\n", ft_atoi("  +2147483648"));
+	printf("%d\n", atoi("  +2147483648"));
 	printf("Testing ft_strlcpy.c:\n");
 	printf("%zu\n", ft_strlcpy(a, b, 4));
 	printf("%s\n", a);
@@ -149,6 +155,8 @@ int	main(void)
 	printf("%s\n", strnstr("Hello", "el", 4));
 	printf("%s\n", ft_strnstr("Hello", "\0", 2));
 	printf("%s\n", strnstr("Hello", "\0", 2));
+	printf("%s\n", ft_strnstr("Hello", "", 2));
+	printf("%s\n", strnstr("Hello", "", 2));
 	printf("\n\n\n");
 	printf("Testing ft_memcpy.c:\n");
 	ft_memset(x, 'a', 5);
