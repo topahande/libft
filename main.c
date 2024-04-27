@@ -188,5 +188,16 @@ int	main(void)
 	printf("%s\n", calloc(5, 2));
 	printf("%s\n", ft_calloc(0, 2));
 	printf("%s\n", calloc(0, 2));
+	printf("Testing ft_substr.c:\n");
+	char const A[] = "Hello Hande!\0";
+	printf("%s\n", ft_substr(A, 6, 0));
+	printf("%s\n", ft_substr(A, 13, 4));
+	printf("%s\n", ft_substr(A, 6, 4));
+	printf("%s\n", ft_substr(A, 6, 5));
+	printf("%s\n", ft_substr(A, 6, 8));
+	printf("Testing ft_strjoin.c:\n");
+	char const B[] = "Hello \0";
+	char const C[] = "Hande!\0";
+	printf("%s\n", ft_strjoin(B, C));
 	return (0);
 }

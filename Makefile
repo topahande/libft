@@ -35,6 +35,8 @@ MY_SOURCES = ft_isalpha.c \
 			ft_memmove.c \
 			ft_memcmp.c \
 			ft_calloc.c \
+			ft_substr.c \
+			ft_strjoin.c \
 			main.c
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
