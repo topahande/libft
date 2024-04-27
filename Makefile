@@ -41,6 +41,7 @@ MY_SOURCES = ft_isalpha.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
+			ft_lstnew.c \
 			main.c
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
