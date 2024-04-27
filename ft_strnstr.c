@@ -6,32 +6,32 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:42:22 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/23 13:42:24 by htopa            ###   ########.fr       */
+/*   Updated: 2024/04/27 14:33:31 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* ************************************************************************** */
-/* LIBRARY                                                                    */   
-/*   libft                                                                    */  
-/* DESCRIPTION                                                                */
-/*   The ft_strnstr() function re-implements the original strnstr() function  */
-/*   which is part of the string library. It locates the first occurrence of  */
-/*   the null-terminated string needle in the string haystack, where not more */
-/*   than len characters are searched. Characters that appear after a ‘\0’    */
-/*   character are not searched.                                              */
-/* RETURN VALUES                                                              */
-/*   If needle is an empty string, haystack is returned; if needle occurs     */
-/*   nowhere in haystack, NULL is returned; otherwise a pointer to the first  */
-/*   character of the first occurrence of needle is returned.                 */
-/* ************************************************************************** */
+/* ************************************************************************** 
+LIBRARY   
+libft  
+DESCRIPTION
+The ft_strnstr() function re-implements the original strnstr() function
+which is part of the string library. It locates the first occurrence of
+the null-terminated string needle in the string haystack, where not more
+than len characters are searched. Characters that appear after a ‘\0’
+character are not searched.
+RETURN VALUES
+If needle is an empty string, haystack is returned; if needle occurs
+nowhere in haystack, NULL is returned; otherwise a pointer to the first
+character of the first occurrence of needle is returned.
+***************************************************************************** */
 
 #include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t  i;
-    size_t  j;
+	size_t	i;
+	size_t	j;
 
-    i = 0;
+	i = 0;
 	j = 0;
 	if (needle[i] == '\0' || needle == NULL)
 		return ((char *)haystack);

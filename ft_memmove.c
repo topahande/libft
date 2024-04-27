@@ -6,7 +6,7 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:41:49 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/23 13:41:50 by htopa            ###   ########.fr       */
+/*   Updated: 2024/04/27 14:31:28 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
 	char		*cdst;
 	const char	*csrc;
+	size_t		i;
 
 	cdst = (char *)dst;
 	csrc = (const char *)src;
-	i = 0;
-	while (i < len)
+	if (cdst <= csrc || cdst - csrc >= len)
+		return (ft_memcpy(dst, src, len));
+	if (cdst - csrc < len)
 	{
-		cdst[i] = csrc[i];
-		i++;
+		i = len;
+		while (i > 0)
+		{
+			cdst[i - 1] = csrc[i - 1];
+			i--;
+		}
 	}
 	dst = (void *restrict)cdst;
 	return (dst);

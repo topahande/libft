@@ -20,11 +20,14 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 
 	cdst = (char *)dst;
 	csrc = (const char *)src;
-	i = 0;
-	while (i < n)
+	if (cdst != csrc)
 	{
-		cdst[i] = csrc[i];
-		i++;
+		i = 0;
+		while (i < n)
+		{
+			cdst[i] = csrc[i];
+			i++;
+		}
 	}
 	dst = (void *restrict)cdst;
 	return (dst);
