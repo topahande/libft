@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <fcntl.h>
 #include "libft.h"
 
 int	main(void)
@@ -199,5 +200,18 @@ int	main(void)
 	char const B[] = "Hello \0";
 	char const C[] = "Hande!\0";
 	printf("%s\n", ft_strjoin(B, C));
+	int fd;
+	fd = open("/Users/htopa/Documents/Mygit/libft/foo.txt", O_CREAT | O_RDWR | O_APPEND);
+	ft_putchar_fd('H', fd);
+	close(fd);
+	fd = open("/Users/htopa/Documents/Mygit/libft/foo.txt", O_CREAT | O_RDWR | O_APPEND);
+	ft_putstr_fd("Hande", fd);
+	close(fd);
+	fd = open("/Users/htopa/Documents/Mygit/libft/foo.txt", O_CREAT | O_RDWR | O_APPEND);
+	ft_putendl_fd("Hande", fd);
+	close(fd);
+	fd = open("/Users/htopa/Documents/Mygit/libft/foo.txt", O_CREAT | O_RDWR | O_APPEND);
+	ft_putnbr_fd(-1965, fd);
+	close(fd);
 	return (0);
 }
