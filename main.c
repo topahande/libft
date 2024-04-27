@@ -176,6 +176,13 @@ int	main(void)
 	printf("%s\n", ft_memmove(p + 2, p, 14));
 	char pp[] = "123456781234567\0";
 	printf("%s\n", memmove(pp + 2, pp, 14));
+	printf("Testing ft_memcmp.c:\n");
+	char strxx[] = "Heallo\0";
+	char stryy[] = "Heello\0";
+	printf("%d\n", ft_memcmp(strxx, stryy, 4));
+	printf("%d\n", memcmp(strxx, stryy, 4));
+	printf("%d\n", ft_memcmp(strxx, stryy, 2));
+	printf("%d\n", memcmp(strxx, stryy, 2));
 	printf("Testing ft_calloc.c:\n");
 	printf("%s\n", ft_calloc(5, 2));
 	printf("%s\n", calloc(5, 2));
