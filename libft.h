@@ -6,7 +6,7 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:36:35 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/28 13:56:55 by htopa            ###   ########.fr       */
+/*   Updated: 2024/05/13 15:52:58 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <errno.h>
+# include <limits.h>
 
 typedef struct s_list
 {
