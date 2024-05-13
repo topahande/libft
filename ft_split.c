@@ -6,11 +6,9 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 11:15:38 by htopa             #+#    #+#             */
-/*   Updated: 2024/05/06 12:52:47 by htopa            ###   ########.fr       */
+/*   Updated: 2024/05/13 13:19:09 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 #include "libft.h"
 
@@ -49,7 +47,7 @@ static int	get_word_count(char const *s, char c)
 	return (count);
 }
 
-static void	free_list(char **strs, int j)
+static int	free_list(char **strs, int j)
 {
 	int	i;
 
@@ -60,9 +58,10 @@ static void	free_list(char **strs, int j)
 		i++;
 	}
 	free(strs);
+	return (0);
 }
 
-static int	part_two(char const *s, char c, char **arr)
+static int	fill_array(char const *s, char c, char **arr)
 {
 	int	i;
 	int	j;
@@ -83,10 +82,7 @@ static int	part_two(char const *s, char c, char **arr)
 				i++;
 			arr[j] = ft_substr(s, index, i - index);
 			if (arr[j] == NULL)
-			{
-				free_list(arr, j);
-				return (0);
-			}
+				return (free_list(arr, j));
 			j++;
 		}
 		arr[j] = (void *)0;
@@ -117,8 +113,7 @@ char	**ft_split(char const *s, char c)
 	}
 	else if (count == 0)
 		arr[count] = (void *)0;
-	else
-		if (part_two(s, c, arr) == 0)
-			return (NULL);
+	else if (fill_array(s, c, arr) == 0)
+		return (NULL);
 	return (arr);
 }
