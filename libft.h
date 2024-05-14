@@ -6,7 +6,7 @@
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 11:36:35 by htopa             #+#    #+#             */
-/*   Updated: 2024/05/13 15:52:58 by htopa            ###   ########.fr       */
+/*   Updated: 2024/05/14 11:02:23 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,14 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstnew_bonus(void *content);
+void	ft_lstadd_front_bonus(t_list **lst, t_list *new);
+int		ft_lstsize_bonus(t_list *lst);
+t_list	*ft_lstlast_bonus(t_list *lst);
+void	ft_lstadd_back_bonus(t_list **lst, t_list *new);
+void	ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
+void	ft_lstclear_bonus(t_list **lst, void (*del)(void *));
+void	ft_lstiter_bonus(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif
