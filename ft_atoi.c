@@ -30,9 +30,10 @@ int	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		if ((10 * (long)nbr + (*str - '0')) / 10 != (long)nbr && sign == 1)
+		if (sign == 1 && (10 * (long)nbr + (*str - '0')) / 10 != (long)nbr)
 			return (-1);
-		else if ((10 * (long)nbr + (*str - '0')) / 10 != (long)nbr && sign == -1)
+		else if (sign == -1
+			&& (10 * (long)nbr + (*str - '0')) / 10 != (long)nbr)
 			return (0);
 		nbr = 10 * nbr + (*str - '0');
 		str++;
