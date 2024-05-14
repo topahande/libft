@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 13:58:04 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/28 14:05:31 by htopa            ###   ########.fr       */
+/*   Created: 2024/05/14 10:48:34 by htopa             #+#    #+#             */
+/*   Updated: 2024/05/14 10:48:54 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstnew_bonus(void *content)
 {
-	while (lst != NULL)
-	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
-	}
-	return (lst);
+	t_list	*node;
+
+	node = (t_list *)malloc(sizeof(t_list));
+	if (node == NULL)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

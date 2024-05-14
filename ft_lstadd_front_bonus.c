@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: htopa <htopa@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/28 13:46:35 by htopa             #+#    #+#             */
-/*   Updated: 2024/04/28 13:56:15 by htopa            ###   ########.fr       */
+/*   Created: 2024/05/14 10:49:04 by htopa             #+#    #+#             */
+/*   Updated: 2024/05/14 10:49:19 by htopa            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_front_bonus(t_list **lst, t_list *new)
 {
-	int	n_nodes;
-
-	n_nodes = 0;
-	while (lst != NULL)
-	{
-		lst = lst->next;
-		n_nodes++;
-	}
-	return (n_nodes);
+	if (lst == NULL || new == NULL)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }
