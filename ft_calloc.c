@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*ptr;
+	void	*ptr;
 	size_t	total_size;
 
 	if (size > 0 && count > (UINT_MAX / size))
@@ -23,6 +23,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(total_size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_memset(ptr, 0, total_size);
-	return ((void *)ptr);
+	ft_bzero(ptr, total_size);
+	return (ptr);
 }
