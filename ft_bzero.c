@@ -23,6 +23,5 @@ void	*ft_bzero(void *s, size_t n)
 		a++;
 		n--;
 	}
-	s = a;
 	return (s);
 }

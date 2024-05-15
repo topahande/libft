@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
@@ -32,5 +30,5 @@ char	*ft_strrchr(const char *s, int c)
 	if (p != -1)
 		return ((char *)(s + p));
 	else
-		return (NULL);
+		return (0);
 }

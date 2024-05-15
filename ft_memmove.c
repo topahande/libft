@@ -20,7 +20,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	cdst = (char *)dst;
 	csrc = (const char *)src;
-	if ((size_t)(cdst - csrc) <= 0 || (size_t)(cdst - csrc) >= len)
+	if ((cdst - csrc) <= 0 || (size_t)(cdst - csrc) >= len)
 		return (ft_memcpy(dst, src, len));
 	else if ((size_t)(cdst - csrc) < len)
 	{
@@ -31,6 +31,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i--;
 		}
 	}
-	dst = (void *)cdst;
 	return (dst);
 }

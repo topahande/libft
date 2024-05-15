@@ -57,42 +57,38 @@ SRCSB =	ft_lstnew_bonus.c \
 
 NAME = libft.a
 
-OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
-OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
 OBJSB = $(SRCSB:.c=.o)
-OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJSB))
 
 CC = cc
 
 CC_FLAGS = -Wall -Wextra -Werror
 
-$(OBJS_DIR)%.o : %.c libft.h
-	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling: $<"
-	@$(CC) $(CC_FLAGS) -c $< -o $@
+%.o : %.c libft.h
+	$(CC) $(CC_FLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_PREFIXED)
-	@echo "Libft Done !"
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+	echo "Libft Done !"
 
 bonus: .bonus
 
-.bonus: $(OBJECTS_BONUS_PREFIXED)
-	@ar r $(NAME) $(OBJECTS_BONUS_PREFIXED)
-	@echo "Libft Bonus Done !"
+.bonus: $(OBJS) $(OBJSB)
+	ar rcs $(NAME) $(OBJS) $(OBJSB)
+	echo "Libft Bonus Done !"
 	touch .bonus
 
 all: $(NAME)
 
 clean:
-	rm -rf $(OBJS_DIR)
-	rm -rf .bonus
+	rm -f $(OBJS)
+	rm -f $(OBJSB)
+	rm -f .bonus
 
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean all bonus
 
 .PHONY: all clean fclean re bonus
